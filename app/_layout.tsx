@@ -1,7 +1,7 @@
 // Root layout with database initialization and error boundary
 
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator, StyleSheet, Platform } from 'react-native';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useAppStore } from '@/store';
@@ -34,7 +34,7 @@ export default function RootLayout() {
             screenOptions={{
               headerShown: false,
               contentStyle: { backgroundColor: colors.bg },
-              animation: Platform.OS === 'web' ? 'fade' : 'slide_from_right',
+              animation: 'slide_from_right',
             }}
           />
         </AlertProvider>
