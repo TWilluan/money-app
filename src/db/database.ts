@@ -1,6 +1,7 @@
 // SQLite database initialization and schema
 
 import * as SQLite from 'expo-sqlite';
+import { Platform } from 'react-native';
 import { runMigrations } from './migrations';
 import { checkAndSeedCategories } from './seeds';
 
@@ -8,7 +9,13 @@ let db: SQLite.SQLiteDatabase | null = null;
 
 export async function getDatabase(): Promise<SQLite.SQLiteDatabase> {
   if (db) return db;
-  db = await SQLite.openDatabaseAsync('money_manager.db');
+
+  // On web, use a unique database name to avoid OPFS conflicts
+  const dbName = Platform.OS === 'web'
+    ? 'money_manager_web.db'
+    : 'money_manager.db';
+
+  db = await SQLite.openDatabaseAsync(dbName);
   return db;
 }
 
