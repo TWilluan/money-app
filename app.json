@@ -30,8 +30,7 @@
       "themeColor": "#0D0F17",
       "backgroundColor": "#0D0F17",
       "display": "standalone",
-      "orientation": "portrait",
-      "startUrl": "/"
+      "orientation": "portrait"
     },
     "plugins": [
       [
