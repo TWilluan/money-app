@@ -33,12 +33,7 @@
       "orientation": "portrait"
     },
     "plugins": [
-      [
-        "expo-router",
-        {
-          "root": "./src/app"
-        }
-      ],
+      "expo-router",
       [
         "expo-sqlite",
         {
